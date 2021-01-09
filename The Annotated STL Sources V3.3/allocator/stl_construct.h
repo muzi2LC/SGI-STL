@@ -90,7 +90,7 @@ inline void _Destroy(_ForwardIterator __first, _ForwardIterator __last) {
   __destroy(__first, __last, __VALUE_TYPE(__first));
 }
 
-// 第二版本，destroy 泛型特化
+// 第二版本，destroy 泛型特化                                 //这里泛型特化的意义是？
 inline void _Destroy(char*, char*) {}
 inline void _Destroy(int*, int*) {}
 inline void _Destroy(long*, long*) {}
