@@ -28,12 +28,12 @@
 #ifndef DEFALLOC_H
 #define DEFALLOC_H
 
-#include <new.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <iostream.h>
-#include <algobase.h>
+#include <new.h>                   //::operator new , ::operator delete ,set_new_handler
+#include <stddef.h>                //ptrdiff_t, size_t 
+#include <stdlib.h>                //exit
+#include <limits.h>                //UINT_MAX
+#include <iostream.h>              //cerr
+#include <algobase.h>              //max 
 
 
 template <class T>
@@ -72,6 +72,8 @@ public:
     const_pointer const_address(const_reference x) { 
 	return (const_pointer)&x; 
     }
+	
+                                                                                              //不太理解作用
     size_type init_page_size() { 
 	return max(size_type(1), size_type(4096/sizeof(T))); 
     }
@@ -80,6 +82,7 @@ public:
     }
 };
 
+                                                                                             //不太理解作用
 class allocator<void> {
 public:
     typedef void* pointer;
